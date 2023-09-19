@@ -1,6 +1,6 @@
 resource "morpheus_group" "tf_example_group" {
-  name      = var.groupname
-  code      = var.groupcode
+  name      = customOptions.groupName
+  code      = customOption.groupCode
   location  = "denver"
   cloud_ids = [1]
 }
