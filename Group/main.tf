@@ -1,4 +1,4 @@
-resource "morpheus_group" "tf_example_group56" {
+resource "morpheus_group" "tf_example_group" {
   name      = "<%=customOptions.groupName%>"
   code      = "<%=customOptions.groupCode%>"
   location  = "denver"
