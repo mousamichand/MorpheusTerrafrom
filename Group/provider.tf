@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     morpheus = {
-      source  = "gomorpheus/morpheus"
-      version = "0.12.0"
+      source = "gomorpheus/morpheus"
+      version = "0.13.3"
     }
   }
 }
