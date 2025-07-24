@@ -8,8 +8,8 @@ terraform {
 }
 
 provider "morpheus" {
-  url      = "<%=customOptions.morpheusUrl%>"
+  url      = "<%=var.morpheusUrl%>"
 #  username = "<%=customOptions.morpheusUserName%>"
 #  password = "<%=customOptions.morpheusPassword%>"
-  access_token = "<%=customOptions.morpheusPassword%>"
+  access_token = "<%=var.morpheusPassword%>"
 }
