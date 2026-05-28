@@ -24,16 +24,16 @@
  }
  
  # Workflow catalog item - NO logo provided (should reproduce blank logo)
- resource "hpe_morpheus_catalog_item_workflow" "mc-test_no_logo" {
-   name         = "test-catalog-no-logo"
-   description  = "Test catalog item without a logo"
-   enabled      = true
-   featured     = false
-   workflow_id  = 2638
-   context_type = "appliance"
-   content      = "Test catalog item - no logo"
-   visibility   = "public"
- }
+# resource "hpe_morpheus_catalog_item_workflow" "mc-test_no_logo" {
+#   name         = "test-catalog-no-logo"
+#   description  = "Test catalog item without a logo"
+#   enabled      = true
+#   featured     = false
+#   workflow_id  = 2638
+#   context_type = "appliance"
+#   content      = "Test catalog item - no logo"
+#   visibility   = "public"
+# }
 
  resource "hpe_morpheus_catalog_item_workflow" "test_with_logo" {
    name                 = "test-catalog-with-logo"
