@@ -40,7 +40,7 @@
  resource "hpe_morpheus_catalog_item_workflow" "test_with_logo" {
    name                 = "test-catalog-with-logo"
    description          = "Test catalog item with a logo"
-   logo_image_path      = local.logo_path
+   logo_image_path =       "/var/opt/morpheus/morpheus-local/repo/local/9e27ff416acb023f730de23aa6e299a0eaab3545ef10085672dcdb33/Catalog/logo.jpg"
    logo_image_name      = "logo.jpg"
    enabled              = true
    featured             = false
@@ -49,6 +49,9 @@
    context_type         = "appliance"
    content              = "Test catalog item - with logo"
    visibility           = "public"
+ }
+ output "debug_logo_path" {
+   value = abspath(path.module)
  }
 
 
