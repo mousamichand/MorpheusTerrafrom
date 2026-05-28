@@ -15,7 +15,9 @@
    type        = string
    sensitive   = true
  }
- 
+  locals {
+   logo_path = "${abspath(path.module)}/logo.jpg"
+ }
  provider "hpe" {
    morpheus{
    url      = var.morph_url
@@ -38,7 +40,7 @@
  resource "hpe_morpheus_catalog_item_workflow" "test_with_logo" {
    name                 = "test-catalog-with-logo"
    description          = "Test catalog item with a logo"
-   logo_image_path      = "logo.jpg"
+   logo_image_path      = local.logo_path
    logo_image_name      = "logo.jpg"
    enabled              = true
    featured             = false
