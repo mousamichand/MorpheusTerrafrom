@@ -37,27 +37,29 @@
 #   visibility   = "public"
 # }
 
- resource "null_resource" "download_logo" {
+  resource "null_resource" "download_logo" {
+   triggers = {
+     always_run = timestamp()
+   }
    provisioner "local-exec" {
-     command = "curl -L -o ${abspath(path.module)}/logo.jpg 'https://stage.morpheusdata.com/public-archives/download/Public%20Install%20Files/logo.jpg'"
+     command = "curl -L -f -o /tmp/logo.jpg 'https://stage.morpheusdata.com/public-archives/download/Public%20Install%20Files/logo.jpg' && echo 'Download OK' || echo 'Download FAILED'"
    }
  }
-
-
+ 
  resource "hpe_morpheus_catalog_item_workflow" "test_with_logo" {
+   depends_on           = [null_resource.download_logo]
    name                 = "test-catalog-with-logo"
    description          = "Test catalog item with a logo"
-   logo_image_path       = "${abspath(path.module)}/logo.jpg"
+   logo_image_path      = "/tmp/logo.jpg"
    logo_image_name      = "logo.jpg"
    enabled              = true
    featured             = false
-   workflow_id          = 2638
-   labels               = ["terraform test", "demo"]
+   workflow_id          = var.workflow_id
    context_type         = "appliance"
    content              = "Test catalog item - with logo"
    visibility           = "public"
  }
- output "debug_logo_path" {
+
    value = abspath(path.module)
  }
 
