@@ -60,6 +60,4 @@
    visibility           = "public"
  }
 
-   value = abspath(path.module)
- }
-
+   
