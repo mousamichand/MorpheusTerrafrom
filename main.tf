@@ -40,7 +40,7 @@
  resource "hpe_morpheus_catalog_item_workflow" "test_with_logo" {
    name                 = "test-catalog-with-logo"
    description          = "Test catalog item with a logo"
-   logo_image_path       = ""${abspath(path.module)}/logo.jpg"
+   logo_image_path       = "${abspath(path.module)}/logo.jpg"
    logo_image_name      = "logo.jpg"
    enabled              = true
    featured             = false
