@@ -42,7 +42,7 @@
      always_run = timestamp()
    }
    provisioner "local-exec" {
-     command = "curl -L -f -o /tmp/logo.jpg 'https://stage.morpheusdata.com/public-archives/download/Public%20Install%20Files/logo.jpg' && echo 'Download OK' || echo 'Download FAILED'"
+      command = "curl -L -f -o /tmp/logo.jpg 'https://raw.githubusercontent.com/mousamichand/MorpheusTerrafrom/main/logo.jp' && echo 'Download OK' || echo 'Download FAILED'"
    }
  }
  
