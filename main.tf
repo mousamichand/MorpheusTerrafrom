@@ -37,6 +37,13 @@
 #   visibility   = "public"
 # }
 
+ resource "null_resource" "download_logo" {
+   provisioner "local-exec" {
+     command = "curl -L -o ${abspath(path.module)}/logo.jpg 'https://stage.morpheusdata.com/public-archives/download/Public%20Install%20Files/logo.jpg'"
+   }
+ }
+
+
  resource "hpe_morpheus_catalog_item_workflow" "test_with_logo" {
    name                 = "test-catalog-with-logo"
    description          = "Test catalog item with a logo"
