@@ -54,7 +54,7 @@
    logo_image_name      = "logo.jpg"
    enabled              = true
    featured             = false
-   workflow_id          = 2638
+   workflow_id          = 1
    context_type         = "appliance"
    content              = "Test catalog item - with logo"
    visibility           = "public"
