@@ -17,5 +17,5 @@
  
  import {
    to = hpe_morpheus_cloud.cloud-test-vmware
-   id = <vmware-cloud-id>
+   id = 4
  }
