@@ -23,7 +23,4 @@ provider "hpe" {
    access_token = var.access_token
 }
  
- import {
-   to = hpe_morpheus_cloud.cloud-test-vmware
-   id = 4
- }
+}
