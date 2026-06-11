@@ -6,14 +6,12 @@
      }
    }
  }
- 
- provider "hpe" {
-   morpheus {
-     url      = "https://<your-morpheus-appliance>"
-     username = "<username>"
-     password = "<password>"
-   }
- }
+  
+provider "hpe" {
+   morpheus{
+   url      = var.morph_url
+   access_token = var.access_token
+}
  
  import {
    to = hpe_morpheus_cloud.cloud-test-vmware
