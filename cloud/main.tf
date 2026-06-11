@@ -6,7 +6,17 @@
      }
    }
  }
-  
+ variable "access_token" {
+   description = "Morpheus API access token"
+   type        = string
+   sensitive   = true
+ }
+  variable "morph_url" {
+   description = "Morpheus API access token"
+   type        = string
+   sensitive   = true
+ }  
+
 provider "hpe" {
    morpheus{
    url      = var.morph_url
